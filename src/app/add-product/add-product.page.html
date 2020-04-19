@@ -1,0 +1,92 @@
+<app-myheader icon="menu-outline"   ></app-myheader>
+
+<ion-content  >
+  <br>
+  <br>
+  <br>
+  <br>
+  
+ <form [formGroup]="validation_form" (ngSubmit)=" addProduit(validation_form.value)">
+
+ 
+
+  <p>Name</p>
+  
+  <div class="ion-text-center">
+    <input  text-center type="text"  formControlName="nom"  required>
+  </div>
+
+ 
+
+ 
+
+<div class="validation-errors">
+<ng-container *ngFor=" let validation of  validation_messages.nom">
+<div class="error-message"
+ 
+*ngIf="validation_form.get('nom').hasError(validation.type)
+  && ( validation_form.get('nom').dirty || validation_form.get('nom').touched)
+
+
+"
+
+>
+{{ validation.message}}
+</div>
+
+</ng-container >
+</div>
+<br>
+ 
+
+<p>Price </p>
+  <div class="ion-text-center">  <input  type=" number"     formControlName="prix"   required > 
+  </div>
+ 
+
+<div class="validation-errors">
+  <ng-container  *ngFor=" let validation of validation_messages.prix">
+<div class="error-message"
+
+*ngIf=" validation_form.get('prix').hasError(validation.type)
+
+&&(validation_form.get('prix').dirty || validation_form.get('prix').touched)
+"
+
+
+>
+
+ 
+  {{ validation.message}}
+</div>
+
+
+  </ng-container >
+
+</div>
+ 
+
+<br>
+
+ <div class="ion-text-center">
+ 
+ 
+  <ion-icon (click)='file.click()' name="download"></ion-icon>
+
+  <input  #file hidden="true" (change)="showImage($event)" type="file">
+   <br>
+   <img  *ngIf="Myimage" height="50" width="50" [src]="Myimage"  />
+ 
+ </div>
+<br>
+ <button
+type="submit"
+[disabled]="!validation_form.valid"
+ 
+>
+Add
+</button>
+
+ 
+ </form>
+</ion-content>
