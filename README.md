@@ -13,4 +13,4 @@ https://github.com/walidbouatouche/-my-product-Mobil-App-Angular-Ionic-6-/raw/ma
 
 
 <img src='https://github.com/walidbouatouche/-my-product-Mobil-App-Angular-Ionic-6-/blob/master/Sans%20titre.png?raw=true' width='
-200px'  height='500px'>
+150px'  height='400px'>
