@@ -1,24 +1,15 @@
- 
-
- 
- <div [class]="class">
-   <!--
+<div [class]="class">
+  <!--
   <img src="/assets/head.png" />
    -->
- 
-    <ion-icon   *ngIf="!show" style=" -webkit-transform: rotate(40deg);
+  <ion-icon *ngIf="!show" style=" -webkit-transform: rotate(40deg);
     -moz-transform: rotate(40deg);
     -o-transform: rotate(40deg);
     -ms-transform: rotate(40deg);
-    transform: rotate(40deg);" name="{{icon}}" ></ion-icon>
-         <ion-icon   *ngIf="show" name="{{icon}}"  (click)="onClick()"  ></ion-icon>
- 
-<br>
-   
-   <br>
-
- 
- </div>
+    transform: rotate(40deg);" name="{{icon}}">
+  </ion-icon>
+  <ion-icon *ngIf="show" name="{{icon}}" (click)="onClick()"></ion-icon>
+  <br><br>
 
 
- 
+</div>

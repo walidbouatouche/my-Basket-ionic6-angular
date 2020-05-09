@@ -1,13 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule  , ReactiveFormsModule} from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-
 import { EditProductPageRoutingModule } from './edit-product-routing.module';
-
 import { EditProductPage } from './edit-product.page';
-import{ SharedModule} from'../shared/shared.module'
+import { SharedModule } from '../shared/shared.module'
 
 @NgModule({
   imports: [
@@ -15,9 +12,9 @@ import{ SharedModule} from'../shared/shared.module'
     FormsModule,
     IonicModule,
     SharedModule,
-    EditProductPageRoutingModule ,
+    EditProductPageRoutingModule,
     ReactiveFormsModule
   ],
   declarations: [EditProductPage]
 })
-export class EditProductPageModule {}
+export class EditProductPageModule { }

@@ -1,25 +1,16 @@
-<app-myheader icon="menu-outline"   ></app-myheader>
-
-
- 
-
+<app-myheader icon="menu-outline"></app-myheader>
 <ion-content>
   <br>
   <br>
   <div class="ion-text-center">
-
- 
     <form [formGroup]="validation_form" (ngSubmit)='editProduct(validation_form.value)'>
 
-        <div class="ion-text-center">
-          <p>Name</p>
-            <input type="text"     formControlName="nom" required>
-
-           
-<br>
-  <ng-container *ngFor=" let validation of validation_messages.nom">
-      <span      *ngIf="
-      
+      <div class="ion-text-center">
+        <p>Name</p>
+        <input type="text" formControlName="nom" required>
+        <br>
+        <ng-container *ngFor=" let validation of validation_messages.nom">
+          <span *ngIf="
       validation_form.get('nom').hasError(validation.type)
 
       &&
@@ -31,25 +22,20 @@
 
       )
       
-      
-      
-      
-      
       ">
-    {{ validation.message}}
-      </span>
-   
-  </ng-container>
-</div> 
-<br>
-  <div class="ion-text-center">
+            {{ validation.message}}
+          </span>
 
-    <p>Price</p>
-   <input     formControlName="prix"  > <br>
-   <ng-container *ngFor=" let validation of validation_messages.prix">
-  <span   *ngIf="
+        </ng-container>
+      </div>
+      <br>
+      <div class="ion-text-center">
+
+        <p>Price</p>
+        <input formControlName="prix"> <br>
+        <ng-container *ngFor=" let validation of validation_messages.prix">
+          <span *ngIf="
               validation_form.get('prix').hasError(validation.type)
-
               &&
               (
                   validation_form.get('prix').dirty
@@ -59,34 +45,24 @@
 
               )
   
-  
-  
   ">
+            {{ validation.message}}
+          </span>
+        </ng-container>
+      </div>
 
-    {{ validation.message}}
+      <br>
+      <div class="ion-text-center">
+        <br>
+        <img (click)="file.click()" height=" 80 " width="80" [src]="image_url">
+        <br>
 
-  </span>
-
-   </ng-container>
-  </div>     
-  
-
- 
-
-<br>
-        <div class="ion-text-center">
-<br>
- <img  (click)="file.click()"  height=" 80 " width="80" [src]="image_url">
- <br>
-
- <input hidden="true"  #file type="file" (change)="showImage($event)">  
- <br>
-        <button  type="submit"  [disabled]=" !validation_form.valid">
-
-
-         Update
+        <input hidden="true" #file type="file" (change)="showImage($event)">
+        <br>
+        <button type="submit" [disabled]=" !validation_form.valid">
+          Update
         </button>
       </div>
     </form>
-    </div>
+  </div>
 </ion-content>

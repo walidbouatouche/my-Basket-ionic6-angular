@@ -1,5 +1,6 @@
-import { Component, OnInit, Output ,Input , EventEmitter} from '@angular/core';
- import{UxService} from"../../services/ux/ux.service";
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
+import { UxService } from "../../services/ux/ux.service";
+
 @Component({
   selector: 'app-myheader',
   templateUrl: './myheader.component.html',
@@ -7,35 +8,33 @@ import { Component, OnInit, Output ,Input , EventEmitter} from '@angular/core';
 })
 export class MyheaderComponent implements OnInit {
 
-  class:string="header";
-  show:boolean=true;
- 
- @Input() icon:string;
- @Output() menuclick:EventEmitter<any>=new EventEmitter();
+  class: string = "header";
+  show: boolean = true;
 
-  constructor(public ux:UxService) {}
+  @Input() icon: string;
+  @Output() menuclick: EventEmitter<any> = new EventEmitter();
 
+  constructor(public ux: UxService) { }
 
-  onClick(){
+  onClick() {
     this.open();
-  this.menuclick.emit(true);
+    this.menuclick.emit(true);
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-   open(){
-     this.ux.openMenuController();
-     this.animate();
-   }
-   animate(){
- 
-  	this.show=false;
-  	    setTimeout( () => {
-          this.show=true;
- 
-  }, 100); 
-   }
+  open() {
+    this.ux.openMenuController();
+    this.animate();
+  }
+  animate() {
 
- 
+    this.show = false;
+    setTimeout(() => {
+      this.show = true;
+    }, 100);
+  }
+
+
 
 }

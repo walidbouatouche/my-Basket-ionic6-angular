@@ -1,58 +1,57 @@
 import { Injectable } from '@angular/core';
-import {LoadingController } from '@ionic/angular';
-import { ToastController ,MenuController } from '@ionic/angular';
+import { LoadingController } from '@ionic/angular';
+import { ToastController, MenuController } from '@ionic/angular';
+
 @Injectable({
   providedIn: 'root'
 })
 export class UxService {
-  loadingControllersub:any;
-  constructor(  public  menuController:MenuController ,public toastController:ToastController, public loadingController:LoadingController) { }
 
+  loadingControllersub: any;
 
+  constructor(public menuController: MenuController, public toastController: ToastController, public loadingController: LoadingController) { }
 
+  async prepareLoadingController(message: string) {
+    this.loadingControllersub = await this.loadingController.create({
+      message: message,
+      mode: 'md'
+    });
+  }
 
-async prepareLoadingController(message:string){
-  this.loadingControllersub = await this.loadingController.create({
-    message: message,
-    mode:'md'
-  });
-}
-
-  showLoadingController(){
+  showLoadingController() {
     this.loadingControllersub.present();
-     }
-   
-   
-     hideLoadingController(){
-       this.loadingControllersub.dismiss();
-     }
-     async showToastController(msg:string){
+  }
 
-     
-      const toast = await this.toastController.create({
-        message: msg,
-        duration: 1000 , 
-        position: 'bottom',
-        mode:'md' ,
-        buttons: [
-          
-          {
-            text: 'Done',
-            role: 'cancel',
-            handler: () => {
-              console.log('Cancel clicked');
-            }
+
+  hideLoadingController() {
+    this.loadingControllersub.dismiss();
+  }
+  async showToastController(msg: string) {
+
+    const toast = await this.toastController.create({
+      message: msg,
+      duration: 1000,
+      position: 'bottom',
+      mode: 'md',
+      buttons: [
+
+        {
+          text: 'Done',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
           }
-        ]
-      });
-  
-      toast.present();
-    }
-    openMenuController(){
-      this.menuController.open();
-    }
-    closeMenuController(){
-      this.menuController.close();
-    }
-   }
+        }
+      ]
+    });
+
+    toast.present();
+  }
+  openMenuController() {
+    this.menuController.open();
+  }
+  closeMenuController() {
+    this.menuController.close();
+  }
+}
 

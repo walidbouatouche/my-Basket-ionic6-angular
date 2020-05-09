@@ -1,37 +1,30 @@
-
-<app-myheader icon="menu-outline"  (menuclick)="onclick($event)">
+<app-myheader icon="menu-outline" (menuclick)="onclick($event)">
 </app-myheader>
-<ion-content    text-center  >
- 
-
- <ion-icon  [routerLink]="['/add-product']"   class="ion-text-center"class="icon"  name="add-outline"></ion-icon> 
-
+<ion-content text-center>
+  <ion-icon [routerLink]="['/add-product']" class="ion-text-center" class="icon" name="add-outline"></ion-icon>
   <br>
- 
+  <ion-list>
+    <ion-item lines="none" *ngFor="  let produit of produits ; let i=index; let last=last ; trackBy:identify ">
+      <span style="display: none;">{{i}} </span>
+      <img width="110" height="120" *ngIf="produit.image_url" [src]="produit?.image_url" />
 
+      <ion-label style="color:#3c3c3c; margin-left: 5px;"> {{produit.nom}} </ion-label>
 
-    <ion-list>
-      <ion-item lines="none"  *ngFor="  let produit of produits ; let i=index; let last=last ; trackBy:identify "   >
-      <span style="display: none;" >{{i}}  </span>
-  <img width="110" height="120"   *ngIf="produit.image_url" [src]="produit?.image_url" />
-            
-  <ion-label style="color:#3c3c3c; margin-left: 5px;"> {{produit.nom}}   </ion-label>
- 
-        <ion-icon class="icon"  style=" font-size: 25px; margin-left: 15px;"(click)="remove(produit.id)" name="trash-outline"></ion-icon>  
-        <ion-icon class="icon"  [routerLink]="['/edit-product',produit.id]"  style=" font-size: 25px; margin-left: 15px;"  name="create-outline"></ion-icon> 
-      </ion-item>
-    </ion-list>
- 
-  
- <p changeText >
-copyright walid  mohamed [[ page | numberx2 ]]
- </p>
- <br>
- <div  class="ion-text-center">
-  <button    (click)="logout()"> Logout</button>
+      <ion-icon class="icon" style=" font-size: 25px; margin-left: 15px;" (click)="remove(produit.id)"
+        name="trash-outline"></ion-icon>
+      <ion-icon class="icon" [routerLink]="['/edit-product',produit.id]" style=" font-size: 25px; margin-left: 15px;"
+        name="create-outline"></ion-icon>
+    </ion-item>
+  </ion-list>
+  <p changeText>
+    copyright walid mohamed [[ page | numberx2 ]]
+  </p>
+  <br>
+  <div class="ion-text-center">
+    <button (click)="logout()"> Logout</button>
 
- </div>
- <br>
-<br>
+  </div>
+  <br>
+  <br>
 
 </ion-content>

@@ -10,16 +10,14 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PipePipe } from './pipes/pipe.pipe';
 import { DirectiveDirective } from './directive/directive.directive';
- 
+
 @NgModule({
   declarations: [AppComponent, PipePipe, DirectiveDirective],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot({
 
-    rippleEffect: false, mode: 'ios' ,
-    swipeBackEnabled:false
-   
-     
+    rippleEffect: false, mode: 'ios',
+    swipeBackEnabled: false
 
   }), AppRoutingModule],
   providers: [
@@ -29,6 +27,5 @@ import { DirectiveDirective } from './directive/directive.directive';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
-  
- 
+export class AppModule { }
+
