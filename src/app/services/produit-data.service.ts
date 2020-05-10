@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { produit } from '../models/produit.class'
 
+// https://angular.io/tutorial/toh-pt4
 @Injectable({
   providedIn: 'root'
 })
@@ -64,7 +65,7 @@ export class ProduitDataService {
     }
   }
   getDataFromStorage() {
-    return JSON.parse(localStorage.getItem('produits'))
+    return JSON.parse(localStorage.getItem('produits')) //https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
   }
 
 }

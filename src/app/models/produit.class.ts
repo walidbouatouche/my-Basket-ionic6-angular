@@ -1,4 +1,4 @@
-
+ // https://www.typescriptlang.org/docs/handbook/interfaces.html
 export class produit {
     id: number;
     nom: string;

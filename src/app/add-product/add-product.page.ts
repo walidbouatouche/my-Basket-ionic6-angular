@@ -10,9 +10,9 @@ import { UxService } from '../services/ux/ux.service';
   templateUrl: './add-product.page.html',
   styleUrls: ['./add-product.page.scss'],
 })
-
+// add page
 export class AddProductPage implements OnInit {
-  validation_form: FormGroup;
+  validation_form: FormGroup;  //https://angular.io/guide/form-validation
   _add_product = new produit();
   Myimage: string = "";
   validation_messages = {
@@ -109,7 +109,7 @@ export class AddProductPage implements OnInit {
 
 
     };
-    reader.readAsDataURL(file);
+    reader.readAsDataURL(file); //https://www.tutorialspoint.com/converting-images-to-a-base64-data-url-using-javascript
   }
 
 

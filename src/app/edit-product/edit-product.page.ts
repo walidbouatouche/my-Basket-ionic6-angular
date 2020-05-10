@@ -8,6 +8,7 @@ import{FormBuilder,FormGroup,Validators, FormControl} from'@angular/forms' ;
   templateUrl: './edit-product.page.html',
   styleUrls: ['./edit-product.page.scss'],
 })
+// the same docs of add--page
 export class EditProductPage implements OnInit {
  produit=new produit();
  validation_form:FormGroup;
